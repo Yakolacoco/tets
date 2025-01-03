@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotPTBP</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 300px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .title {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #bbbbbb;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            margin: 10px auto;
+            border-radius: 8px;
+            width: 80%;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .button.green {
+            background: #4caf50;
+        }
+
+        .button.green:hover {
+            background: #45a045;
+        }
+
+        .button.blue {
+            background: #2196f3;
+        }
+
+        .button.blue:hover {
+            background: #1e88e5;
+        }
+
+        .button.red {
+            background: #f44336;
+        }
+
+        .button.red:hover {
+            background: #e53935;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #bbbbbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-img">
+            <img src="image02.jpg" alt="Profile">
+        </div>
+        <p class="subtitle">I'M 15</p>
+        <h1 class="title">NotPTBP</h1>
+        <p class="subtitle">Lazy game dev</p>
+        <div class="buttons">
+            <a href="https://gamejolt.com/@ptbp" class="button green" target="_blank" onclick="incrementVisitor()">Gamejolt</a>
+            <a href="https://discord.gg/SsTvjXVEW3" class="button blue" target="_blank" onclick="incrementVisitor()">My Discord Server</a>
+            <a href="https://www.youtube.com/@NotPTBP" class="button red" target="_blank" onclick="incrementVisitor()">YouTube</a>
+        </div>
+        <footer id="visitor-count">Visiteur : 0</footer>
+    </div>
+
+    <script>
+        // Initialiser le compteur
+        let visitorCount = localStorage.getItem('visitorCount') || 0;
+        document.getElementById('visitor-count').textContent = `Visiteur : ${visitorCount}`;
+
+        // Fonction pour incrémenter uniquement lors des clics sur les liens
+        function incrementVisitor() {
+            visitorCount++;
+            localStorage.setItem('visitorCount', visitorCount);
+            document.getElementById('visitor-count').textContent = `Visiteur : ${visitorCount}`;
+        }
+    </script>
+</body>
+</html>
