@@ -109,21 +109,6 @@
             <a href="https://gamejolt.com/@ptbp" class="button green" target="_blank" onclick="incrementVisitor()">Gamejolt</a>
             <a href="https://discord.gg/SsTvjXVEW3" class="button blue" target="_blank" onclick="incrementVisitor()">My Discord Server</a>
             <a href="https://www.youtube.com/@NotPTBP" class="button red" target="_blank" onclick="incrementVisitor()">YouTube</a>
-        </div>
-        <footer id="visitor-count">Visiteur : 0</footer>
-    </div>
-
-    <script>
-        // Initialiser le compteur
-        let visitorCount = localStorage.getItem('visitorCount') || 0;
-        document.getElementById('visitor-count').textContent = `Visiteur : ${visitorCount}`;
-
-        // Fonction pour incrémenter uniquement lors des clics sur les liens
-        function incrementVisitor() {
-            visitorCount++;
-            localStorage.setItem('visitorCount', visitorCount);
-            document.getElementById('visitor-count').textContent = `Visiteur : ${visitorCount}`;
-        }
-    </script>
+ 
 </body>
 </html>
